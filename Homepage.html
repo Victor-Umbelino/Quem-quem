@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site da casa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Quem é você?</h1>
+    </header>
+    <main>
+        <div id="formulario">
+            <h2>Preencha com suas informações.</h2>
+            Escreva sua data de nascimento:
+            <br>
+            <input type='number' id='data-de-nascimento' placeholder='Data de nascimento'>
+            <br>
+            <input type="radio" name="sexo" id="masculino" value="Masculino"> Masculino
+            <input type="radio" name="sexo" id="feminino" value="Feminino"> Feminino
+            <br>
+            <input type="button" id="botao" value="Confirmar" onclick="enviar()">
+            <br>
+            <div id="resultado">
+                <p>Aqui aparecerá o resultado da sua consulta.</p>
+            </div>
+        </div>
+    </main>
+    <script>
+        function enviar() {
+            var data_de_nascimento = document.getElementById("data-de-nascimento").value;
+            var sexoMasculino = document.getElementById("masculino").checked;
+            var sexoFeminino = document.getElementById("feminino").checked;
+            var resultado = document.getElementById("resultado");
+            var fez_ou_nao =false;
+            if ((data_de_nascimento && (sexoMasculino || sexoFeminino)) && data_de_nascimento <2026) {
+                switch (parseInt(data_de_nascimento)) {
+                    case 1975:
+                        if (sexoMasculino) {
+                            resultado.innerHTML = "Você é papai. <br> <img id='papai' src='imagens/papai.jpg'>";
+                            fez_ou_nao = true;
+                        }
+                        break;
+                    case 1976:
+                        if (sexoFeminino) {
+                            resultado.innerHTML = "Você é mamãe. <br> <img id='mamae' src='imagens/mamae.jpg'>";
+                            fez_ou_nao = true;
+                        }
+                        break;
+                    case 2004:
+                        if (sexoMasculino) {
+                            resultado.innerHTML = "Você é eu? <br> <img id='eu' src='imagens/eu.jpg'>";
+                            fez_ou_nao = true;
+                        } else if (sexoFeminino) {
+                            resultado.innerHTML = "Você é a Lili, amor da minha vida. <br> <img id='lili' src='imagens/lili.jpg'>";
+                            fez_ou_nao = true;
+                        }
+                        break;
+                    case 2010:
+                        if (sexoFeminino) {
+                            resultado.innerHTML = "Você é a may. <br> <img id='may' src='imagens/may.jpg'>";
+                            fez_ou_nao = true;                        
+                        }
+                        break;
+                    case 2019:
+                        if(sexoFeminino){
+                            resultado.innerHTML = "Você é a mel. <br> <img id='mel' src='imagens/mel.jpg'>";
+                            fez_ou_nao = true;
+                        }
+                    break;
+                }
+            if (!fez_ou_nao) {
+                resultado.innerHTML = "Você não é ninguém que eu conheça.";
+            }
+            } else {
+                resultado.innerHTML = "Preencha todos os campos corretamente.";
+            } 
+        }
+    </script>
+</body>
+<footer>
+    <p>Desenvolvido por Victor Umbelino</p>
+</footer>
+</html>
