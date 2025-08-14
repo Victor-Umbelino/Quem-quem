@@ -15,7 +15,7 @@
             <h2>Preencha com suas informações.</h2>
             Escreva sua data de nascimento:
             <br>
-            <input type='number' id='data-de-nascimento' placeholder='Data de nascimento'>
+            <input type='date' id='data-de-nascimento' placeholder='Data de nascimento'>
             <br>
             <input type="radio" name="sexo" id="masculino" value="Masculino"> Masculino
             <input type="radio" name="sexo" id="feminino" value="Feminino"> Feminino
@@ -29,22 +29,40 @@
     </main>
     <script>
         function enviar() {
-            var data_de_nascimento = document.getElementById("data-de-nascimento").value;
+            var data_de_nascimento = parseInt(document.getElementById("data-de-nascimento").value.split("-")[0]);
             var sexoMasculino = document.getElementById("masculino").checked;
             var sexoFeminino = document.getElementById("feminino").checked;
             var resultado = document.getElementById("resultado");
             var fez_ou_nao =false;
             if ((data_de_nascimento && (sexoMasculino || sexoFeminino)) && data_de_nascimento <2026) {
                 switch (parseInt(data_de_nascimento)) {
-                    case 1975:
-                        if (sexoMasculino) {
-                            resultado.innerHTML = "Você é papai. <br> <img id='papai' src='imagens/papai.jpg'>";
+                    case 1950:
+                        if (sexoFeminino) {
+                            resultado.innerHTML = "Você é a Vovo. <br> <img id='vovo' src='imagens/vovo.jpg'>";
                             fez_ou_nao = true;
                         }
                         break;
+                    case 1974:
+                        if (sexoFeminino) {
+                            resultado.innerHTML = "Você é a Titia. <br> <img id='titia' src='imagens/titia.jpg'>";
+                            fez_ou_nao = true;
+                        }
+                        break;
+                    case 1975:
+                        if (sexoMasculino) {
+                            resultado.innerHTML = `
+                                Você tem uma cachorra? <br>
+                                <input type='radio' name='sim' id='sim' value='Sim'> Sim
+                                <input type='radio' name='nao' id='nao' value='Não'> Não
+                                <br>
+                                <input type='button' id='botao2' value='Confirmar' onclick='ser()'>
+                            `;
+                            fez_ou_nao = true;
+                             }
+                        break;
                     case 1976:
                         if (sexoFeminino) {
-                            resultado.innerHTML = "Você é mamãe. <br> <img id='mamae' src='imagens/mamae.jpg'>";
+                            resultado.innerHTML = "Você é a Mamãe. <br> <img id='mamae' src='imagens/mamae.jpg'>";
                             fez_ou_nao = true;
                         }
                         break;
@@ -59,27 +77,67 @@
                         break;
                     case 2010:
                         if (sexoFeminino) {
-                            resultado.innerHTML = "Você é a may. <br> <img id='may' src='imagens/may.jpg'>";
+                            resultado.innerHTML = "Você é a May. <br> <img id='may' src='imagens/may.jpg'>";
                             fez_ou_nao = true;                        
                         }
                         break;
-                    case 2019:
-                        if(sexoFeminino){
-                            resultado.innerHTML = "Você é a mel. <br> <img id='mel' src='imagens/mel.jpg'>";
+                    case 2012:
+                        if (sexoMasculino) {
+                            resultado.innerHTML = "Você é o Paulinho. <br> <img id='paulinho' src='imagens/paulinho.jpg'>";
                             fez_ou_nao = true;
                         }
-                    break;
+                        break;
+                    case 2015:
+                        if(sexoFeminino){
+                            resultado.innerHTML = "Você é a Bebel. <br> <img id='bebel' src='imagens/bebel.jpg'>";
+                            fez_ou_nao = true;
+                        }
+                        break
+                    case 2018:
+                            if (sexoFeminino) {
+                            resultado.innerHTML = "Você é a Gata. <br> <img id='gata' src='imagens/gata.jpg'>";
+                            fez_ou_nao = true;
+                            }
+                        break;
+                    case 2019:
+                            if (sexoFeminino) {
+                            resultado.innerHTML = "Você é a Lilo. <br> <img id='lilo' src='imagens/lilo.jpg'>";
+                            fez_ou_nao = true;
+                            }
+                        break;
+                    case 2020:
+                        if (sexoFeminino) {
+                            resultado.innerHTML = "Você é a Mel. <br> <img id='mel' src='imagens/mel.jpg'>";
+                            fez_ou_nao = true;
+                        }
+                        break;
                 }
             if (!fez_ou_nao) {
                 resultado.innerHTML = "Você não é ninguém que eu conheça.";
             }
-            } else {
+
+            }
+            else {
                 resultado.innerHTML = "Preencha todos os campos corretamente.";
-            } 
+            }
         }
+        function ser() {
+                var sim = document.getElementById("sim").checked;
+                var nao = document.getElementById("nao").checked;
+                var resultado = document.getElementById("resultado");
+
+                if (nao) {
+                    resultado.innerHTML = "Você é o tio Kido. <br> <img id='tio' src='imagens/tio.jpg'>";
+                } else if (sim) {
+                    resultado.innerHTML = "Você é o Papai. <br> <img id='papai' src='imagens/papai.jpg'>";
+                } 
+                else {
+                    resultado.innerHTML = "Escolha uma opção!";
+                }
+            }   
     </script>
 </body>
 <footer>
-    <p>Desenvolvido por Victor Umbelino</p>
+    <p>Desenvolvido por <a href="https://www.linkedin.com/in/victor-umbelino-90576a119/"  target="_blank">Victor Umbelino</a></p>
 </footer>
 </html>
