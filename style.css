@@ -1,6 +1,7 @@
 body{
     background-color: skyblue;
     font-family: Arial, sans-serif;
+    margin: 350px;
 }
 h1 {
     color: darkblue;
@@ -42,44 +43,12 @@ div#resultado {
     border-radius: 5px;
     background-color: #f9f9f9;
 }
-img#papai {
-    width: 250px;
-    height: auto;
-    display: block;
-    margin: 10px auto;
-}
-img#mamae {
-    width: 250px;
-    height: auto;
-    display: block;
-    margin: 10px auto;
-}   
-img#eu {
-    width: 250px;
-    height: auto;
-    display: block;
-    margin: 10px auto;
-}
-img#lili {
-    width: 250px;
-    height: auto;
-    display: block;
-    margin: 10px auto;
-}
-img#may {
-    width: 250px;
-    height: auto;
-    display: block;
-    margin: 10px auto;
-}
-img#mel {
-    width: 250px;
-    height: auto;
-    display: block;
-    margin: 10px auto;
-}
-img#papai, img#mamae, img#eu, img#lili, img#may, img#mel {
+img#papai, img#mamae, img#eu, img#lili, img#may, img#mel, img#gata, img#lilo, img#tio , img#bebel, img#vovo , img#paulinho, img#titia {
     border-radius: 10px;
+    width: 250px;
+    height: auto;
+    display: block;
+    margin: 10px auto;
 }
 footer {
     text-align: center;
